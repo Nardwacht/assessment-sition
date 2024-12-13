@@ -1,0 +1,181 @@
+@import "./reset.css";
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+@media only screen and (min-width: 1280px) {
+  nav {
+    background-color: #FFFFFF;
+    height: 64px;
+  }
+  nav .navItem {
+    font-size: 16pt;
+  }
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  font-family: roboto;
+  font-style: normal;
+  font-size: 14pt;
+}
+
+#product-listing {
+  align-content: center;
+  margin: 5vw;
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+a:visited {
+  color: #000000;
+}
+
+.product-card {
+  grid-column: auto;
+  grid-column: 1/4;
+}
+.product-card .visual {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 1;
+}
+.product-card .visual .labels {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: fit-content;
+}
+.product-card .visual .labels .new {
+  background-color: #FFC8CB;
+}
+.product-card .visual .labels .discount {
+  background-color: #C8E8FF;
+}
+.product-card .visual .labels .new, .product-card .visual .labels .discount {
+  line-height: 20px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin: 5px;
+  padding: 0 4px;
+  width: min-content;
+}
+.product-card .visual .image {
+  aspect-ratio: 1/1;
+}
+.product-card .visual .image img {
+  display: block;
+  top: 0;
+  margin: auto;
+  width: auto;
+  max-height: 288px;
+}
+
+.price-information {
+  margin-top: 15px;
+}
+
+.new, .discount-label, .navItem {
+  text-transform: uppercase;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+}
+
+.discountPrice {
+  color: #FF3A46;
+}
+
+nav {
+  position: sticky;
+  margin: 0;
+  top: 0;
+  background-color: #FC969C;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
+  font-size: 14px;
+}
+nav a.navItem {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 48px;
+  margin: 0 8px;
+}
+nav a.selected {
+  color: #FFFFFF;
+  border-bottom: 3px #FFFFFF solid;
+}/*# sourceMappingURL=style.css.map */

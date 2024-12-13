@@ -1,0 +1,21 @@
+// Mobile viewport
+@media only screen and (max-width: 768px) {
+    
+}
+
+// Tablet viewport
+@media only screen and (min-width: 769px) and (max-width: 1400px) {
+    
+}
+
+// Desktop viewport
+@media only screen and (min-width: 1280px) {
+        
+    nav{
+        background-color: $background-color-white;
+        height: 64px;
+        .navItem {
+            font-size: 16pt;
+        }
+    }
+}

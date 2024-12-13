@@ -1,0 +1,116 @@
+@import "./reset.css";
+@import "imports/constants";
+@import "imports/mobile-rules";
+* {
+    // debug only
+    //outline: 1px solid magenta;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: $background-color-white;
+    font-family: roboto;
+    font-style: normal;
+    font-size: 14pt;
+}
+
+main {
+
+}
+
+#product-listing {
+    align-content: center;
+    margin: 5vw;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+a:visited {
+    color: $color-text-black;
+}
+
+.product-card {
+    grid-column: auto;
+    grid-column: 1 / 4;
+    .visual {
+        width: 100%;
+        position: relative;
+        aspect-ratio: 1;
+
+        .labels {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: fit-content;
+            .new {
+                background-color: $background-color-label-new;
+            }
+            
+            .discount {
+                background-color: $background-color-label-discount;
+            }
+            
+            .new, .discount {
+                line-height: 20px;
+                font-size: 12px;
+                border-radius:4px;
+                margin: 5px;
+                padding: 0 4px;
+                width: min-content;
+            }
+        }
+        
+        .image {
+            aspect-ratio: 1/1;
+            img {
+                display: block;
+                top: 0;
+                margin: auto;
+                width: auto;
+                max-height: 288px;
+            }
+        }
+    }
+}
+
+
+.price-information {
+    margin-top: 15px;
+}
+
+.new, .discount-label, .navItem{
+    text-transform: uppercase;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+}
+
+.discountPrice {
+    color: $color-text-discount;
+}
+
+nav {
+    position: sticky;
+    margin: 0;
+    top: 0;
+    background-color: $background-color-navbar-mobile;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    font-size: 14px;
+    a.navItem{
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 48px;
+        margin: 0 8px;
+    }
+    a.selected {
+        color: $color-text-white;
+        border-bottom: 3px $color-text-white solid;
+    }
+}
