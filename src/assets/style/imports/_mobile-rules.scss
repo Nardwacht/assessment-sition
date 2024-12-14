@@ -1,21 +1,73 @@
 // Mobile viewport
-@media only screen and (max-width: 768px) {
-    
+@media only screen and (max-width: 767px) {
+	.navItem {
+		margin: 0 7px;
+	}
+	.product-card {
+		grid-column: span 12;
+	}
 }
 
 // Tablet viewport
-@media only screen and (min-width: 769px) and (max-width: 1400px) {
-    
+@media only screen and (min-width: 768px) and (max-width: 1400px) {
+	.navItem {
+		margin: 0 16px;
+		font-size: 14px;
+	}
+
+	.info {
+		font-size: 16px;
+	}
+
+	.product-card {
+		grid-column: span 6;
+	}
+
+	.price-information {
+		margin-top: 8px;
+	}
+
+	#products-list {
+		margin: 18px;
+	}
 }
 
 // Desktop viewport
 @media only screen and (min-width: 1280px) {
-        
-    nav{
-        background-color: $background-color-white;
-        height: 64px;
-        .navItem {
-            font-size: 16pt;
-        }
-    }
+	body {
+		background-image: url("../img/background-image.jpeg");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	nav {
+		background-color: $background-color-white;
+		height: 64px;
+		border-bottom: 1px solid $color-border-navigation-border;
+		.navItem {
+			line-height: 64px;
+			font-size: 16px;
+			margin: 0 16px;
+		}
+		.selected {
+			color: $color-text-navbar-desktop;
+			border-bottom: 1px solid $color-text-navbar-desktop;
+		}
+	}
+
+	#products-list {
+		margin: 0;
+		padding: 16px 20px;
+	}
+	.product-card {
+		grid-column: span 4;
+	}
+
+	#app {
+		margin: auto;
+	}
+
+	#shopping-cart {
+		color: $color-text-navbar-desktop;
+	}
 }

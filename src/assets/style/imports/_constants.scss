@@ -1,95 +1,94 @@
 // Colors definition
 
 // Text colors
-$color-text-white: #FFFFFF;
+$color-text-white: #ffffff;
 $color-text-black: #000000;
-$color-text-discount: #FF3A46;
-
+$color-text-discount: #ff3a46;
 
 // Background colors
-$background-color-white: #FFFFFF;
-$background-color-navbar-mobile: #FC969C;
-$background-color-label-new: #FFC8CB;
-$background-color-label-discount: #C8E8FF;
-$background-color-product-image:#F9F9F9;
+$background-color-white: #ffffff;
+$background-color-navbar-mobile: #fc969c;
+$background-color-label-new: #ffc8cb;
+$background-color-label-discount: #c8e8ff;
+$background-color-product-image: #f9f9f9;
 
 // Other element colors
-$color-selected-nav-item: #FFFFFF;
-$color-icon-shopping-cart:#FF7A82;
-$color-border-navigation-border: #E4E4E4;
+$color-selected-nav-item: #ffffff;
+$color-text-navbar-desktop: #ff7a82;
+$color-border-navigation-border: #e4e4e4;
 
 // images and fonts
 $background-image-url: "https://s3-alpha-sig.figma.com/img/38ad/ac8b/dc23fd8f0e1f93e2ab898362a5b8bfc0?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=T1CnsEullJsiz6gvOibNQCkOYjT6ote7MudpueBctZurU3QN5HXV9JGq7EAt9BQ-Ohl5QiGetRRtoZxvSOlg~xfokFsCizrR0X0LeYiDvQx2SlmxOADUkCcbHeLH6JViO~tDjezZD1a-uR5osAvRtfCFvVq5Ww8coKZSwJLOH~R0vBq0CsrOMhuP12eB~gz9ZBowoWETcfIGL5ThS1HPjuu9gtbh4oe8s7cc9r01iHxvUGEZMqmoNy8YCzsDxpjdqJTblMRsQDRftqqK41Sq6ogmcERnmS~XxBgcRpjmp-HaHFYR0JhJSv6t-gNqm7dOmHFQhwTwKYGE5qG~vYrOxg__";
 
 // Roboto font styles to easily apply everything
 .roboto-thin {
-    font-family: "Roboto", sans-serif;
-    font-weight: 100;
-    font-style: normal;
+	font-family: "Roboto", sans-serif;
+	font-weight: 100;
+	font-style: normal;
 }
 
 .roboto-light {
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	font-style: normal;
 }
 
 .roboto-regular {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .roboto-medium {
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+	font-family: "Roboto", sans-serif;
+	font-weight: 500;
+	font-style: normal;
 }
 
 .roboto-bold {
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-style: normal;
+	font-family: "Roboto", sans-serif;
+	font-weight: 700;
+	font-style: normal;
 }
 
 .roboto-black {
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    font-style: normal;
+	font-family: "Roboto", sans-serif;
+	font-weight: 900;
+	font-style: normal;
 }
 
 .roboto-thin-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 100;
-    font-style: italic;
+	font-family: "Roboto", sans-serif;
+	font-weight: 100;
+	font-style: italic;
 }
 
 .roboto-light-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-style: italic;
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	font-style: italic;
 }
 
 .roboto-regular-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: italic;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-style: italic;
 }
 
 .roboto-medium-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-style: italic;
+	font-family: "Roboto", sans-serif;
+	font-weight: 500;
+	font-style: italic;
 }
 
 .roboto-bold-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-style: italic;
+	font-family: "Roboto", sans-serif;
+	font-weight: 700;
+	font-style: italic;
 }
 
 .roboto-black-italic {
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    font-style: italic;
+	font-family: "Roboto", sans-serif;
+	font-weight: 900;
+	font-style: italic;
 }
