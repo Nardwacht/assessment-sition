@@ -1,6 +1,6 @@
 * {
 	// A neat debug trick to see how elements behave, use during debug only!
-	//outline: 1px solid magenta;
+	// outline: 1px solid magenta;
 }
 
 html,
@@ -11,7 +11,9 @@ body {
 }
 
 #app {
-	max-width: 1040px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $background-color-white;
 }
 
 nav {
@@ -25,13 +27,17 @@ nav {
 	white-space: nowrap;
 	scrollbar-width: none;
 	font-size: 14px;
-	.navItem {
-		display: inline-block;
-		vertical-align: middle;
-		text-align: center;
-		line-height: 48px;
-		text-transform: uppercase;
-	}
+	
+}
+
+a.navItem {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 48px;
+    text-transform: uppercase;
+    border-bottom:3px solid transparent;
+
 }
 
 a.selected {
@@ -40,7 +46,6 @@ a.selected {
 }
 
 main {
-	height: 100%;
 	display: block;
 	position: relative;
 }
@@ -114,13 +119,33 @@ a.brand-page-link:hover {
 }
 
 #products-list {
+    min-height: 100%;
 	background-color: $background-color-white;
 	position: relative;
-	max-width: 1040px;
+    max-width: 100%;
 	align-content: center;
 	margin: 16px;
 	display: grid;
 	column-gap: 15px;
 	row-gap: 20px;
 	grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+#background-overlay {
+    background-color: #ffffffcc;
+}
+
+#shopping-cart{
+    width: 48px;
+    line-height: 48px;
+    position: absolute;
+    margin: 0;
+    right: 0;
+    vertical-align: middle;
+    :hover{
+        color: darken($color-text-navbar-desktop, 10%);
+    }
+    span {
+        line-height: 48px;
+    }
 }

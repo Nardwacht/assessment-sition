@@ -6,6 +6,7 @@
 
 Some things I encountered during development:
 - The Figma document states that Roboto is used for the text of prices, but when apply these fonts they do not resemble the design at all. Since this is a minor detail, I will leave this as is.
+- Not all of the image URLs are correct, for example the URL for "Summer Dress Salmon" has an image URL that returns a white shirt instead. Since I do not know what the actual URL is, I will keep it as is.
 
 ### 1. Starting out
 "How do I approach this?" was the first question I had before writing any code.
@@ -25,6 +26,8 @@ Figuring out how to make the navbar scrollable was something different though.
 To remove the scrollbars, it is common practice to use ::webkit-scrollbar, but that was not allowed here.
 Eventually I made it scrollable by setting "overflow: auto" and by setting "scrollbar-width: none" so that the bar wasn't visible anymore. 
 
+The navbar also has a small arrow/triangle below it on the desktop viewport which I just couldn't get to work, so for times' sake I left it out.
+
 ### 3. Creating the product listing
 
 The first thought I had when seeing this in Figma was "I need a grid layout for this", so I did.
@@ -36,3 +39,4 @@ Keeping the mobile-first principle in mind, I started with the mobile viewport a
 
 All tablet or desktop specific rules will overwrite this baseline by using media queries later on.
 The navbar has a different color scheme on desktop for example, and the font sizes change on the different viewports. The amount of items in the grid also changes of course, so I had to change the grid-column for that.
+

@@ -1,5 +1,5 @@
 // Mobile viewport
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767.99px) {
 	.navItem {
 		margin: 0 7px;
 	}
@@ -38,6 +38,7 @@
 		background-image: url("../img/background-image.jpeg");
 		background-size: cover;
 		background-repeat: no-repeat;
+        background-attachment: fixed;
 	}
 
 	nav {
@@ -45,15 +46,26 @@
 		height: 64px;
 		border-bottom: 1px solid $color-border-navigation-border;
 		.navItem {
-			line-height: 64px;
+            border-bottom:3px solid transparent;
+			line-height: 61px;
 			font-size: 16px;
 			margin: 0 16px;
 		}
-		.selected {
+		a.selected {
 			color: $color-text-navbar-desktop;
-			border-bottom: 1px solid $color-text-navbar-desktop;
+			border-bottom: 3px solid $color-text-navbar-desktop;
 		}
 	}
+
+    #shopping-cart{
+        width: 64px;
+        span {
+            line-height: 64px;
+        }
+        :hover{
+            color: darken($color-text-navbar-desktop, 10%);
+        }
+    }
 
 	#products-list {
 		margin: 0;
@@ -65,7 +77,9 @@
 
 	#app {
 		margin: auto;
-	}
+        max-width: 1040px;
+
+    }
 
 	#shopping-cart {
 		color: $color-text-navbar-desktop;
