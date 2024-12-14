@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Roboto fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart"
+		/>
+		<link rel="icon" href="/favicon.ico" />
+		<!-- Stylesheet -->
+		<link href="src/assets/style/product-details.css" rel="stylesheet" />
+		<!-- VueJS import -->
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+		<script src="src/main.js" type="module/javascript"></script>
+		<title>Sition Assessment</title>
+	</head>
+	<body>
+		<div id="background-overlay">
+			<div id="app">
+				<nav>
+					<a href="index.html" class="btnBack navItem">Back</a>
+					<a href="" class="navItem" id="shopping-cart">
+						<span class="material-symbols-outlined cart-icon">shopping_cart</span>
+						<span class="cart-text">Cart</span>
+					</a>
+				</nav>
+				<main>
+					<section id="product-details">
+						<div class="image">
+							<div class="labels">
+								<div class="new roboto-light">new</div>
+							</div>
+							<img
+								src="https://assessement.sition.cloud/media/images/FH5296-0722_3528_1.png"
+								alt="images"
+							/>
+						</div>
+						<div class="product-information">
+							<h1>
+								<p class="product-brand roboto-regular">
+									<a href="#bella" class="brand-page-link"> Bella </a>
+								</p>
+								<p class="product-title roboto-medium">Summer Dress Salmon</p>
+							</h1>
+							<p class="roboto-light">
+								<span class="oldPrice"> 34.99 </span>
+								<span class="product-price-discounted"> -30% </span>
+							</p>
+							<p class="roboto-light discountPrice">
+								<span> For </span>
+								<span> 24.50 </span>
+							</p>
+							<p>
+								<select id="color-selection" class="roboto-regular">
+									<option>Color: Salmon</option>
+									<option>Color: Pink</option>
+								</select>
+							</p>
+							<p>
+								<select id="size-selection" class="roboto-regular">
+									<option>Size: XXS</option>
+									<option>Size: XS</option>
+									<option>Size: S</option>
+									<option>Size: M</option>
+									<option>Size: L</option>
+									<option>Size: XL</option>
+									<option>Size: XXL</option>
+								</select>
+							</p>
+							<p>
+								<button id="btnAddToCart">Add to cart</button>
+							</p>
+							<h3>Description:</h3>
+							<p class="product-description roboto-regular">
+								Introducing our stunning salmon-colored summer dress, the
+								perfect addition to your warm weather wardrobe. Made from
+								lightweight and breathable materials, this dress will keep you
+								cool and comfortable all day long. The flattering cut is
+								designed to accentuate your curves, while the vibrant salmon hue
+								will make you stand out from the crowd. Whether you're heading
+								to a beach party or a picnic in the park, this dress is the
+								ultimate summer essential. Pair with sandals and a sun hat for a
+								chic and effortless look.
+							</p>
+							<p>
+								<span>Made from:</span>
+								<span class="product-fabric"> Cotton </span>
+							</p>
+						</div>
+					</section>
+				</main>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	const mediaUrl = "https://assessement.sition.cloud/media/images/";
+	const { createApp, ref } = Vue;
+		createApp({
+			setup() {
+				console.log(mediaUrl);
+				const message = ref('Hello vue!')
+				return {
+					mediaUrl
+				}
+			}
+		}).mount('#app');
+</script>

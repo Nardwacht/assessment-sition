@@ -4,8 +4,8 @@
 // Contains all constant values within the project, such as colors and fonts
 @import "imports/constants";
 
-// Contains all global styling as well as initial values, with mobile-first as the philosophy.
-@import "imports/baseline-rules";
+// Contains all general rules for the list page.
+@import "imports/products-list/baseline-rules";
 
 // Contains all responsive overrides specific for bigger screens
-@import "imports/mobile-rules";
+@import "imports/products-list/mobile-rules";

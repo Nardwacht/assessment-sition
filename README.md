@@ -12,7 +12,8 @@ Some things I encountered during development:
 "How do I approach this?" was the first question I had before writing any code.
 Opening the provided Figma link and seeing the design, I knew I had to separate all the UI elements. I ended up with the navbar and a list of products.
 
-I eventually decided that I wanted to first create the HTML structure with some static data, so that I can create the layout and could get started on the SCSS.
+Because I don't have a lot of experience with VueJS, I decided that I wanted to first create the page in static HTML first using some static data, so that I can create the layout and could get started on the SCSS.
+Eventually I want to convert the project to VueJS, because I want to challenge myself.
 
 When I'm happy with the design and layout I'll continue with the functionality that fetches the data and renders the page dynamically.
 
@@ -40,3 +41,7 @@ Keeping the mobile-first principle in mind, I started with the mobile viewport a
 All tablet or desktop specific rules will overwrite this baseline by using media queries later on.
 The navbar has a different color scheme on desktop for example, and the font sizes change on the different viewports. The amount of items in the grid also changes of course, so I had to change the grid-column for that.
 
+### 4. Creating the product detail page
+Because there was no design provided for this page and I was free to create my own design, that is exactly what I did.
+I created a design for mobile, tablet and desktop in Figma https://www.figma.com/design/4jCUg24aQrdSsszT1TSaDd/assessment-sition-product-details-page?node-id=0-1&t=1FeQORQMEDqBI2Eu-1 so I have some more structure in how I can approach writing the code.
+Some new things needed to be implemented, like a color and size selector, as well as a "add to cart" button.

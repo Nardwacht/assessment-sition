@@ -1,0 +1,11 @@
+// Contains all rules to prevent browser-specific behaviour
+@import "imports/reset";
+
+// Contains all constant values within the project, such as colors and fonts
+@import "imports/constants";
+
+// Contains all general rules for the details page.
+@import "imports/product-details/baseline-rules";
+
+// Contains rules specific for the Product details page
+@import "imports/product-details/mobile-rules";

@@ -61,6 +61,10 @@ textarea {
   margin: 0;
 }
 
+*:focus {
+  outline: none;
+}
+
 button,
 input {
   /* 1 */
@@ -175,9 +179,21 @@ nav {
   white-space: nowrap;
   scrollbar-width: none;
   font-size: 14px;
+  height: 48px;
+}
+nav a {
+  line-height: 48px;
+  font-size: 14px;
+  padding: 0 20px;
+  color: #000000;
+  border-bottom: 3px solid transparent;
+  transition: color 0.1s;
+}
+nav a:hover {
+  color: #ffffff;
 }
 
-a.navItem {
+a {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
@@ -185,15 +201,6 @@ a.navItem {
   text-transform: uppercase;
   border-bottom: 3px solid transparent;
   color: #000000;
-  transition: color 0.2s;
-}
-a.navItem:hover {
-  color: #ffffff;
-}
-
-a.selected {
-  color: #ffffff;
-  border-bottom: 3px #ffffff solid;
 }
 
 main {
@@ -203,26 +210,10 @@ main {
 
 a.brand-page-link {
   z-index: 10;
+  transition: text-decoration 0.2s;
 }
-
 a.brand-page-link:hover {
   text-decoration: underline;
-}
-
-.visual {
-  width: 100%;
-  position: relative;
-  aspect-ratio: 1;
-}
-.visual .image {
-  aspect-ratio: 1/1;
-}
-.visual .image img {
-  display: block;
-  top: 0;
-  margin: auto;
-  width: auto;
-  height: 100%;
 }
 
 .labels {
@@ -252,6 +243,13 @@ a.brand-page-link:hover {
   font-size: 14px;
 }
 
+.product-information h1 {
+  margin-bottom: 20px;
+}
+.product-information p {
+  font-size: 14px;
+}
+
 .price-information {
   margin-top: 12px;
 }
@@ -265,7 +263,7 @@ a.brand-page-link:hover {
   color: #ff3a46;
 }
 
-#products-list {
+#product-details {
   min-height: 100%;
   background-color: #ffffff;
   position: relative;
@@ -276,6 +274,14 @@ a.brand-page-link:hover {
   column-gap: 15px;
   row-gap: 20px;
   grid-template-columns: repeat(12, minmax(0, 1fr));
+  display: grid;
+}
+#product-details img {
+  width: 100%;
+}
+
+.image, .product-information {
+  grid-column: span 12;
 }
 
 #background-overlay {
@@ -284,30 +290,35 @@ a.brand-page-link:hover {
 
 #shopping-cart {
   width: 48px;
-  line-height: 48px;
   margin: 0;
   right: 0;
 }
 #shopping-cart span {
   vertical-align: middle;
 }
-
-#product-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+#shopping-cart .cart-text {
+  display: none;
 }
-#product-details img {
+
+select {
+  color: #000000;
+  background-color: #ECECEC;
+  border: 1px solid #000000;
+  padding: 5px;
+}
+
+select, button {
   width: 100%;
+  height: 44px;
+  border-radius: 5px;
+  margin: 5px 0;
 }
 
-@media only screen and (max-width: 767.99px) {
-  .navItem {
-    margin: 0 7px;
-  }
-  .product-card {
-    grid-column: span 12;
-  }
+#btnAddToCart {
+  color: #ffffff;
+  background-color: #fc969c;
 }
+
 @media screen and (min-width: 860px) {
   #shopping-cart {
     position: absolute;
@@ -321,7 +332,8 @@ a.brand-page-link:hover {
   .info {
     font-size: 16px;
   }
-  .product-card {
+  .image,
+  .product-information {
     grid-column: span 6;
   }
   .price-information {
@@ -341,6 +353,7 @@ a.brand-page-link:hover {
   nav {
     background-color: #ffffff;
     height: 64px;
+    line-height: 64px;
     border-bottom: 1px solid #e4e4e4;
   }
   nav .navItem {
@@ -348,10 +361,19 @@ a.brand-page-link:hover {
     line-height: 61px;
     font-size: 16px;
     margin: 0 16px;
+    transition: border-bottom 0.2s;
+  }
+  nav .navItem:hover {
+    color: #000000;
+    border-bottom: 3px solid #000000;
   }
   nav a.selected {
     color: #ff7a82;
     border-bottom: 3px solid #ff7a82;
+  }
+  .image,
+  .product-information {
+    grid-column: span 6;
   }
   #shopping-cart {
     width: 64px;
@@ -359,8 +381,18 @@ a.brand-page-link:hover {
     margin: 0;
     right: 0;
   }
-  #shopping-cart span {
+  #shopping-cart .cart-icon {
+    font-size: 30px;
+    vertical-align: baseline;
+  }
+  #shopping-cart .cart-text {
+    font-size: 12px;
+    color: #000000;
     line-height: 64px;
+    left: 17px;
+    top: 15px;
+    display: block;
+    position: absolute;
   }
   #shopping-cart:hover {
     color: #ff4752;
@@ -379,4 +411,4 @@ a.brand-page-link:hover {
   #shopping-cart {
     color: #ff7a82;
   }
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=product-details.css.map */

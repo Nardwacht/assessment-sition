@@ -1,3 +1,4 @@
+
 * {
 	// A neat debug trick to see how elements behave, use during debug only!
 	// outline: 1px solid magenta;
@@ -37,7 +38,11 @@ a.navItem {
     line-height: 48px;
     text-transform: uppercase;
     border-bottom:3px solid transparent;
-
+    color: $color-text-black;
+	transition: color .1s;
+        &:hover {
+            color: $color-text-white;
+        }
 }
 
 a.selected {
@@ -48,10 +53,6 @@ a.selected {
 main {
 	display: block;
 	position: relative;
-}
-
-a {
-	color: $color-text-black;
 }
 
 a.brand-page-link {
@@ -112,6 +113,7 @@ a.brand-page-link:hover {
 
 .oldPrice {
 	text-decoration: line-through;
+    margin-right: 10px; 
 }
 
 .discountPrice {
@@ -137,15 +139,14 @@ a.brand-page-link:hover {
 
 #shopping-cart{
     width: 48px;
-    line-height: 48px;
-    position: absolute;
     margin: 0;
     right: 0;
-    vertical-align: middle;
-    :hover{
-        color: darken($color-text-navbar-desktop, 10%);
-    }
+    
     span {
-        line-height: 48px;
+        vertical-align: middle;
     }
+
+	.cart-text {
+		display: none;
+	}
 }
