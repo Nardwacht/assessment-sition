@@ -20,15 +20,17 @@
 		<!-- VueJS import -->
 		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 		<script src="src/main.js" type="module/javascript"></script>
-		<title>Sition Assessment</title>
+		<title>Product Page</title>
 	</head>
 	<body>
 		<div id="background-overlay">
 			<div id="app">
-				<nav>
+				<nav class="roboto-medium">
 					<a href="index.html" class="btnBack navItem">Back</a>
 					<a href="" class="navItem" id="shopping-cart">
-						<span class="material-symbols-outlined cart-icon">shopping_cart</span>
+						<span class="material-symbols-outlined cart-icon"
+							>shopping_cart</span
+						>
 						<span class="cart-text">Cart</span>
 					</a>
 				</nav>
@@ -44,27 +46,21 @@
 							/>
 						</div>
 						<div class="product-information">
-							<h1>
-								<p class="product-brand roboto-regular">
-									<a href="#bella" class="brand-page-link"> Bella </a>
-								</p>
-								<p class="product-title roboto-medium">Summer Dress Salmon</p>
-							</h1>
+							<a href="#bella" class="brand-page-link roboto-regular"> Bella </a>
+							<p class="product-title roboto-medium">Summer Dress Salmon</p>
 							<p class="roboto-light">
 								<span class="oldPrice"> 34.99 </span>
-								<span class="product-price-discounted"> -30% </span>
+								<span class="discount product-price-discounted"> -30% </span>
 							</p>
 							<p class="roboto-light discountPrice">
 								<span> For </span>
 								<span> 24.50 </span>
 							</p>
-							<p>
+							<div class="product-buttons">
 								<select id="color-selection" class="roboto-regular">
 									<option>Color: Salmon</option>
 									<option>Color: Pink</option>
 								</select>
-							</p>
-							<p>
 								<select id="size-selection" class="roboto-regular">
 									<option>Size: XXS</option>
 									<option>Size: XS</option>
@@ -74,11 +70,9 @@
 									<option>Size: XL</option>
 									<option>Size: XXL</option>
 								</select>
-							</p>
-							<p>
-								<button id="btnAddToCart">Add to cart</button>
-							</p>
-							<h3>Description:</h3>
+								<button id="btnAddToCart" class="roboto-medium">Add to cart</button>
+							</div>
+							<p class="roboto-medium">Description:</p>
 							<p class="product-description roboto-regular">
 								Introducing our stunning salmon-colored summer dress, the
 								perfect addition to your warm weather wardrobe. Made from
@@ -90,9 +84,9 @@
 								ultimate summer essential. Pair with sandals and a sun hat for a
 								chic and effortless look.
 							</p>
-							<p>
+							<p class="product-fabric">
 								<span>Made from:</span>
-								<span class="product-fabric"> Cotton </span>
+								<span> Cotton </span>
 							</p>
 						</div>
 					</section>

@@ -53,7 +53,7 @@
 			line-height: 61px;
 			font-size: 16px;
 			margin: 0 16px;
-			transition: border-bottom .2s;
+			transition: border-bottom 0.2s;
 			&:hover {
 				color: $color-text-black;
 				border-bottom: 3px solid $color-text-black;
@@ -65,6 +65,14 @@
 		}
 	}
 
+	.discount {
+		font-size: 16px;
+	}
+
+	#product-details,
+	.product-information {
+		font-size: 16px;
+	}
 	.image,
 	.product-information {
 		grid-column: span 6;
@@ -75,6 +83,7 @@
 		position: absolute;
 		margin: 0;
 		right: 0;
+		color: $color-text-navbar-desktop;
 
 		.cart-icon {
 			font-size: 30px;
@@ -84,7 +93,7 @@
 			font-size: 12px;
 			color: $color-text-black;
 			line-height: 64px;
-			left: 17px;
+			left: 20px;
 			top: 15px;
 			display: block;
 			position: absolute;
@@ -95,20 +104,8 @@
 		}
 	}
 
-	#products-list {
-		margin: 0;
-		padding: 16px 20px;
-	}
-	.product-card {
-		grid-column: span 4;
-	}
-
 	#app {
 		margin: auto;
 		max-width: 1040px;
-	}
-
-	#shopping-cart {
-		color: $color-text-navbar-desktop;
 	}
 }
