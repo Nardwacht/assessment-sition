@@ -42,6 +42,28 @@ All tablet or desktop specific rules will overwrite this baseline by using media
 The navbar has a different color scheme on desktop for example, and the font sizes change on the different viewports. The amount of items in the grid also changes of course, so I had to change the grid-column for that.
 
 ### 4. Creating the product detail page
-Because there was no design provided for this page and I was free to create my own design, that is exactly what I did.
-I created a design for mobile, tablet and desktop in Figma https://www.figma.com/design/4jCUg24aQrdSsszT1TSaDd/assessment-sition-product-details-page?node-id=0-1&t=1FeQORQMEDqBI2Eu-1 so I have some more structure in how I can approach writing the code.
-Some new things needed to be implemented, like a color and size selector, as well as a "add to cart" button.
+
+Because there was no design provided for this page and I was free to create my own design as I see fit, so that is exactly what I did.
+
+I created a design for mobile, tablet and desktop in Figma https://www.figma.com/design/4jCUg24aQrdSsszT1TSaDd/assessment-sition-product-details-page?node-id=0-1&t=1FeQORQMEDqBI2Eu-1 so I could have some more structure in how I can approach writing the code.
+I also wanted to implement some new things, like a color and size selector, as well as a "add to cart" button.
+
+### 5. Creating the VueJS project
+
+Since I don't have a lot of experience with VueJS, I referred to the official VueJS docs to find everything I needed.
+I started by creating the project using "npm create vue@latest" and set everything up I expected to use.
+
+At this stage, I also knew I did not need any of the example files, so I deleted those as well.
+I added my SCSS to the src/assets/style folder, so that I can approach them and include them into the build.
+
+After this, I proceeded by checking how I could divide my static HTML into components.
+Navbar and Product List looked like the first logical candidates, so I copied and pasted my HTML into their respective Vue components. 
+Just keeping it simple for now.
+
+### 6. Making my pages render more dynamically
+
+As a JSON file was provided, I wanted to make sure I used this to loop over all the products and get all their properties into my components. This way I can neatly render the entire page without making the file too big.
+
+Since the JSON has one "products" object holding an array of products, I had to make 2 v-for loops to loop through everything.
+After this succeeded, I finally put some properties in place, and noticed that some images are broken or are a very different aspect ratio than what I tested with. I realise that I should have gone through them during the design phase, but this was easily fixed.
+

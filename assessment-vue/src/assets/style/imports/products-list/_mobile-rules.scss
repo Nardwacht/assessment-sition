@@ -1,0 +1,112 @@
+// Mobile viewport
+@media only screen and (max-width: 767.99px) {
+	.navItem {
+		margin: 0 7px;
+	}
+	.product-card {
+		grid-column: span 12;
+	}
+}
+
+// extra rule to make shopping cart stick to rightmost section of screen
+@media screen and (min-width: 860px) {
+	#shopping-cart {
+		position: absolute;
+	}
+}
+
+// Tablet viewport
+@media only screen and (min-width: 768px) and (max-width: 1400px) {
+	.navItem {
+		margin: 0 16px;
+		font-size: 14px;
+	}
+
+	.info {
+		font-size: 16px;
+	}
+
+	.product-card {
+		grid-column: span 6;
+	}
+
+	.price-information {
+		margin-top: 8px;
+	}
+
+	#products-list {
+		margin: 18px;
+	}
+}
+
+// Desktop viewport
+@media only screen and (min-width: 1280px) {
+	body {
+		background-image: url("../img/background-image.jpeg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+
+	nav {
+		background-color: $background-color-white;
+		height: 64px;
+		border-bottom: 1px solid $color-border-navigation-border;
+		.navItem {
+			border-bottom: 3px solid transparent;
+			line-height: 61px;
+			font-size: 16px;
+			margin: 0 16px;
+			transition: border-bottom .2s;
+			&:hover {
+				color: $color-text-black;
+				border-bottom: 3px solid $color-text-black;
+			}
+		}
+		a.selected {
+			color: $color-text-navbar-desktop;
+			border-bottom: 3px solid $color-text-navbar-desktop;
+		}
+	}
+
+	#shopping-cart {
+		width: 64px;
+		position: absolute;
+		margin: 0;
+		right: 0;
+		.cart-icon {
+			font-size: 30px;
+			vertical-align: baseline;
+		}
+		.cart-text {
+			font-size: 12px;
+			color: $color-text-black;
+			line-height: 64px;
+			left: 17px;
+			top: 15px;
+			display: block;
+			position: absolute;
+		}
+
+		&:hover {
+			color: darken($color-text-navbar-desktop, 10%);
+		}
+	}
+
+	#products-list {
+		margin: 0;
+		padding: 16px 20px;
+	}
+	.product-card {
+		grid-column: span 4;
+	}
+
+	#app {
+		margin: auto;
+		max-width: 1040px;
+	}
+
+	#shopping-cart {
+		color: $color-text-navbar-desktop;
+	}
+}
