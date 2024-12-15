@@ -1,16 +1,16 @@
 <script setup>
 import HelperMethods from "../helperMethods";
 import JsonData from "../assets/data/products.json";
-import { ref } from "vue";
+const productsCatalog = JsonData.products; // since the json has one singular products object containing an array of products, I assign it here.
 
 // This baseUrl would ideally be set via a configuration property or database field.
 const productImageBaseUrl = "https://assessement.sition.cloud/media/images/";
-const productsCatalog = JsonData;
+
 </script>
 
 <template>
-	<ol v-for="products in productsCatalog" id="products-list" :key="products">
-		<li v-for="product in products" class="product-card" :key="product">
+	<ol id="products-list" :key="products">
+		<li v-for="product in productsCatalog" class="product-card" :key="product">
 			<router-link
 				:to="{
 					name: 'Product',

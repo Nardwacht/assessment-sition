@@ -5,10 +5,10 @@
 ### 0.Notes
 
 Some things I encountered during development:
-- The Figma document states that Roboto is used for the text of prices, but when apply these fonts they do not resemble the design at all. Since this is a minor detail, I will leave this as is.
-- Not all of the image URLs are correct, for example the URL for "Summer Dress Salmon" has an image URL that returns a white shirt instead. Since I do not know what the actual URL is, I will keep it as is.
+- The Figma document states that Roboto is used for the text of prices, but when applying these fonts they do not resemble the design at all. Since this is a minor detail, I will leave this as is.
+- Not all of the image URLs are correct, for example the URL for "Summer Dress Salmon" has an image URL that returns a white shirt instead. Since I do not know what the actual URL is, I will keep it as is and show an error message.
 
-### 1. Starting out
+### 1. Starting out - static HTML
 "How do I approach this?" was the first question I had before writing any code.
 Opening the provided Figma link and seeing the design, I knew I had to separate all the UI elements. I ended up with the navbar and a list of products.
 
@@ -19,27 +19,29 @@ When I'm happy with the design and layout I'll continue with the functionality t
 
 For the classnames I will use the Figma document as closely as possible, because it makes it easy to reference and not having to come up with names is always good for a developer. ;)
 
+
 ### 2. Creating the NavBar
 
-Making a sticky navigation was fairly straightforward, just apply position:sticky to it and make sure it is always visible with z-index.
+Making a sticky navigation was fairly straightforward, just apply position:sticky to it and make sure it is always visible with `z-index`.
 
 Figuring out how to make the navbar scrollable was something different though. 
-To remove the scrollbars, it is common practice to use ::webkit-scrollbar, but that was not allowed here.
-Eventually I made it scrollable by setting "overflow: auto" and by setting "scrollbar-width: none" so that the bar wasn't visible anymore. 
+To remove the scrollbars, it is common practice to use `::webkit-scrollbar`, but that was not allowed here.
+Eventually I made it scrollable by setting `overflow: auto` and by setting `scrollbar-width: none` so that the bar wasn't visible anymore. 
 
 The navbar also has a small arrow/triangle below it on the desktop viewport which I just couldn't get to work, so for times' sake I left it out.
+
 
 ### 3. Creating the product listing
 
 The first thought I had when seeing this in Figma was "I need a grid layout for this", so I did.
-I created a container element called "product-list" so that I can fill it with products.
+I created a container element called `product-list` so that I can fill it with products.
 Each product card has the same structure, some labels, an image and some product information like the brand, title and (discounted) price.
 
 After this, it was time to style these elements. 
 Keeping the mobile-first principle in mind, I started with the mobile viewport as a baseline. It is way easier to scale up than to scale down after all. 
 
 All tablet or desktop specific rules will overwrite this baseline by using media queries later on.
-The navbar has a different color scheme on desktop for example, and the font sizes change on the different viewports. The amount of items in the grid also changes of course, so I had to change the grid-column for that.
+The navbar has a different color scheme on desktop for example, and the font sizes change on the different viewports. The amount of items in the grid also changes of course, so I had to change the `grid-column` for that.
 
 ### 4. Creating the product detail page
 
@@ -53,19 +55,30 @@ I also wanted to implement some new things, like a color and size selector, as w
 ### 5. Creating the VueJS project
 
 Since I don't have a lot of experience with VueJS, I referred to the official VueJS docs to find everything I needed.
-I started by creating the project using "npm create vue@latest" and set everything up I expected to use.
+I started by creating the project using `npm create vue@latest` and set everything up I expected to use.
 
 At this stage, I also knew I did not need any of the example files, so I deleted those as well.
-I added my SCSS to the src/assets/style folder, so that I can approach them and include them into the build.
+I added my SCSS to the `src/assets/style` folder, so that I can approach them and include them into the build.
 
 After this, I proceeded by checking how I could divide my static HTML into components.
 Navbar and Product List looked like the first logical candidates, so I copied and pasted my HTML into their respective Vue components. 
 Just keeping it simple for now.
 
-### 6. Making my pages render more dynamically
+### 6. Making the pages render dynamically
 
-As a JSON file was provided, I wanted to make sure I used this to loop over all the products and get all their properties into my components. This way I can neatly render the entire page without making the file too big.
+As a JSON file was provided, I wanted to make sure I used this to loop over all the products and get all their properties into my components. This way I can neatly render the entire page without writing a lot of HTML and use all VueJS has to offer.
 
-Since the JSON has one "products" object holding an array of products, I had to make 2 v-for loops to loop through everything.
-After this succeeded, I finally put some properties in place, and noticed that some images are broken or are a very different aspect ratio than what I tested with. I realise that I should have gone through them during the design phase, but this was easily fixed.
+Since the JSON has one `products` object holding an array of products, I made my life easier by directly accessing the products object. Then, I looped through the products array and put all properties in place.
 
+### 7. Implementing the Product Details page
+
+Since the products in the JSON does not have an id or other unique identifier I decided to use the product title property to pass as a parameter. This way I will able to get each product by searching for their name using JavaScripts built-in `Array.prototype.find(product.title)` function.
+
+Luckily I already created the layout for this page, so after obtaining the product I was able to replace all static text with the products' properties.
+
+### 8. Setting up the router
+
+To be able to show other views, I needed to set up vue-router.
+This would ensure that every product is able to have its own details page.
+
+In the Product Details page I also included a back button which redirects back to the products list page.

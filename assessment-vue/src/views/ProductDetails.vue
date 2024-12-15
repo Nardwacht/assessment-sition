@@ -1,7 +1,6 @@
 <script setup>
 import HelperMethods from "../helperMethods";
 import JsonData from "../assets/data/products.json";
-import { ref } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
