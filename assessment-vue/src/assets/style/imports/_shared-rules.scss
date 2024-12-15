@@ -1,6 +1,6 @@
 * {
 	// A neat debug trick to see how elements behave, use during debug only!
-	outline: 1px solid magenta;
+	// outline: 1px solid magenta;
 }
 
 
@@ -38,7 +38,7 @@ nav {
 		line-height: 45px;
 		border-bottom: 3px solid transparent;
 		font-size: 14px;
-		transition: color 0.1s;
+		transition: color .2s;
 		&:hover {
 			color: $color-text-white;
 		}
@@ -50,10 +50,18 @@ nav {
 	}
 }
 
+#btnAddToCart {
+    cursor: pointer;
+    transition: background-color .2s;
+    &:hover{
+        background-color: darken($background-color-navbar-mobile, 5%);
+    }
+}
+
 a {
 	.brand-page-link {
 		z-index: 10;
-		transition: text-decoration 0.2s;
+		transition: text-decoration .2s;
 		&:hover {
 			text-decoration: underline;
 		}
@@ -66,25 +74,18 @@ a {
     }
 }
 
-#navbar-product-details {
-    
-}
+#shopping-cart {
+    width: 48px;
+    margin: 0;
+    right: 0;
 
-#navbar-products-list {
+    span {
+        vertical-align: middle;
+    }
 
-	#shopping-cart {
-		width: 48px;
-		margin: 0;
-		right: 0;
-
-		span {
-			vertical-align: middle;
-		}
-
-		.cart-text {
-			display: none;
-		}
-	}
+    .cart-text {
+        display: none;
+    }
 }
 
 .info {
@@ -98,6 +99,12 @@ a {
 
 .discountPrice {
 	color: $color-text-discount;
+}
+
+
+.product-colors,
+.product-fabric {
+    margin-bottom: 10px;
 }
 
 .price-information {
@@ -170,21 +177,7 @@ a {
 	}
 	img {
 		width: 100%;
-	}
-
-	#shopping-cart {
-		width: 48px;
-		margin: 0;
-		right: 0;
-		position: absolute;
-
-		span {
-			vertical-align: middle;
-		}
-
-		.cart-text {
-			display: none;
-		}
+        text-align: center;
 	}
 
 	.image,
@@ -264,7 +257,7 @@ main {
 			img {
 				display: block;
 				top: 0;
-				margin: auto;
+				margin: 10px auto;
 				width: 100%;
 				height: 100%;
 				object-fit: cover;

@@ -1,5 +1,5 @@
 <script setup>
-import DataFormatter from "../dataFormatter";
+import HelperMethods from "../helperMethods";
 import JsonData from "../assets/data/products.json";
 import { ref } from "vue";
 import { useRoute } from "vue-router";
@@ -52,27 +52,13 @@ console.debug(product);
 					class="price-information"
 				>
 					<span class="oldPrice">{{
-						DataFormatter.formatPrice(product.price)
+						HelperMethods.formatPrice(product.price)
 					}}</span>
 					<span class="discountPrice">{{
-						DataFormatter.formatPrice(product.discountedPrice)
+						HelperMethods.formatPrice(product.discountedPrice)
 					}}</span>
 				</div>
 				<div class="product-buttons">
-					<select
-						v-model="product.properties.color"
-						id="color-selection"
-						class="roboto-regular"
-						value="{{ product.properties.color[0] }}"
-					>
-						<option
-							v-for="color in product.properties.color"
-							value="Color: {{ color }}"
-							:key="color"
-						>
-							Color: {{ color }}
-						</option>
-					</select>
 					<select id="size-selection" class="roboto-regular">
 						<option>Size: XXS</option>
 						<option>Size: XS</option>
@@ -90,13 +76,42 @@ console.debug(product);
 				<p class="product-description roboto-regular">
 					{{ product.description }}
 				</p>
-				<p
+				<div
+					class="product-colors"
+					v-if="product.properties.hasOwnProperty('color')"
+				>
+					<div v-if="product.properties.color.length > 1">
+						<span> Colors: </span>
+						<span
+							v-for="color in product.properties.color"
+							:key="color"
+						>
+							<br />{{ color }}
+						</span>
+					</div>
+					<div v-else>
+						<span> Color: </span>
+						<span> <br />{{ product.properties.color[0] }} </span>
+					</div>
+				</div>
+				<div
 					class="product-fabric"
 					v-if="product.properties.hasOwnProperty('fabric')"
 				>
-					<span>Made from:</span>
-					<span> Cotton </span>
-				</p>
+					<div v-if="product.properties.fabric.length > 1">
+						<span> Made from: </span>
+						<span
+							v-for="fabric in product.properties.fabric"
+							:key="fabric"
+						>
+							<br />{{ fabric }}
+						</span>
+					</div>
+					<div v-else>
+						<span> Made from: </span>
+						<span> <br />{{ product.properties.fabric[0] }} </span>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>

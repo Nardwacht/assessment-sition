@@ -1,4 +1,4 @@
-const DataFormatter = {
+const HelperMethods = {
     formatPrice: function( price ) {
         return parseFloat( price ).toFixed( 2 );
     },
@@ -8,7 +8,7 @@ const DataFormatter = {
     formatTitleAsRoute: function (title)
     {
         return title.replace( / /g, "+" );
-    }
+    },
 };
 
-export default DataFormatter;
+export default HelperMethods;

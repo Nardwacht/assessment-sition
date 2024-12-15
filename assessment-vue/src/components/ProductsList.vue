@@ -1,12 +1,11 @@
 <script setup>
-import DataFormatter from "../dataFormatter";
+import HelperMethods from "../helperMethods";
 import JsonData from "../assets/data/products.json";
 import { ref } from "vue";
 
 // This baseUrl would ideally be set via a configuration property or database field.
 const productImageBaseUrl = "https://assessement.sition.cloud/media/images/";
 const productsCatalog = JsonData;
-const imageNotFound = ref("../assets/img/no-image-available.png");
 </script>
 
 <template>
@@ -29,7 +28,7 @@ const imageNotFound = ref("../assets/img/no-image-available.png");
 							v-if="product.discountedPrice"
 							class="discount roboto-regular"
 							>{{
-								DataFormatter.getDiscountPercentage(
+								HelperMethods.getDiscountPercentage(
 									product.price,
 									product.discountedPrice
 								)
@@ -39,33 +38,33 @@ const imageNotFound = ref("../assets/img/no-image-available.png");
 					<div class="image">
 						<img
 							v-bind:src="productImageBaseUrl + product.image"
-							v-on:error="this.src = imageNotFound"
+							onerror="console.log('there was an issue loading the image.')"
 							loading="lazy"
-							alt="item-image"
+							alt="Something went wrong while obtaining the image for this product. We're sorry for the inconvenience."
 						/>
 					</div>
 				</a>
 				<div class="info">
-					<span class="brandName roboto-regular">{{
+					<a href="" class="brand-page-link roboto-regular">{{
 						product.brand
-					}}</span>
+					}}</a>
 					<p class="productTitle roboto-medium">
 						{{ product.title }}
 					</p>
 					<div
-						v-if="v"
+						v-if="product.hasOwnProperty('discountedPrice')"
 						class="price-information"
 					>
 						<span class="oldPrice">{{
-							DataFormatter.formatPrice(product.price)
+							HelperMethods.formatPrice(product.price)
 						}}</span>
 						<span class="discountPrice">{{
-							DataFormatter.formatPrice(product.discountedPrice)
+							HelperMethods.formatPrice(product.discountedPrice)
 						}}</span>
 					</div>
 					<div v-else class="price-information">
 						<span class="price">{{
-							DataFormatter.formatPrice(product.price)
+							HelperMethods.formatPrice(product.price)
 						}}</span>
 					</div>
 				</div>
