@@ -46,6 +46,8 @@ The navbar has a different color scheme on desktop for example, and the font siz
 Because there was no design provided for this page and I was free to create my own design as I see fit, so that is exactly what I did.
 
 I created a design for mobile, tablet and desktop in Figma https://www.figma.com/design/4jCUg24aQrdSsszT1TSaDd/assessment-sition-product-details-page?node-id=0-1&t=1FeQORQMEDqBI2Eu-1 so I could have some more structure in how I can approach writing the code.
+During the design, I used the product listing page Figma as a baseline, so headers and font sizes are the same size and the 2 pages are part of the same cohesive "website".
+
 I also wanted to implement some new things, like a color and size selector, as well as a "add to cart" button.
 
 ### 5. Creating the VueJS project

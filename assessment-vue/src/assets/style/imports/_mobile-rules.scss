@@ -1,7 +1,9 @@
+// NEW RULES
+
 // Mobile viewport
 @media only screen and (max-width: 767.99px) {
 	.navItem {
-		margin: 0 7px;
+		margin: 0 9px;
 	}
 	.product-card {
 		grid-column: span 12;
@@ -18,7 +20,7 @@
 // Tablet viewport
 @media only screen and (min-width: 768px) and (max-width: 1400px) {
 	.navItem {
-		margin: 0 16px;
+		margin: 0 18px;
 		font-size: 14px;
 	}
 
@@ -26,15 +28,12 @@
 		font-size: 16px;
 	}
 
-	.product-card {
-		grid-column: span 6;
-	}
-
 	.price-information {
 		margin-top: 8px;
 	}
 
-	#products-list {
+	.product-card {
+		grid-column: span 6;
 		margin: 18px;
 	}
 }
@@ -48,25 +47,50 @@
 		background-attachment: fixed;
 	}
 
+	#product-details {
+		.product-information,
+		.image {
+			grid-column: span 6;
+		}
+	}
+
 	nav {
 		background-color: $background-color-white;
 		height: 64px;
+		line-height: 64px;
 		border-bottom: 1px solid $color-border-navigation-border;
-		.navItem {
+		a.navItem {
 			border-bottom: 3px solid transparent;
 			line-height: 61px;
 			font-size: 16px;
 			margin: 0 16px;
-			transition: border-bottom .2s;
+			padding: 0;
+			transition: border-bottom 0.2s;
 			&:hover {
 				color: $color-text-black;
 				border-bottom: 3px solid $color-text-black;
 			}
 		}
+	}
+
+	#navbar-products-list {
 		a.selected {
 			color: $color-text-navbar-desktop;
 			border-bottom: 3px solid $color-text-navbar-desktop;
 		}
+	}
+
+	.discount {
+		font-size: 16px;
+	}
+
+	#product-details,
+	.product-information {
+		font-size: 16px;
+	}
+	.image,
+	.product-information {
+		grid-column: span 6;
 	}
 
 	#shopping-cart {
@@ -74,6 +98,8 @@
 		position: absolute;
 		margin: 0;
 		right: 0;
+		color: $color-text-navbar-desktop;
+
 		.cart-icon {
 			font-size: 30px;
 			vertical-align: baseline;
@@ -82,7 +108,7 @@
 			font-size: 12px;
 			color: $color-text-black;
 			line-height: 64px;
-			left: 17px;
+			left: 20px;
 			top: 15px;
 			display: block;
 			position: absolute;
@@ -104,9 +130,5 @@
 	#app {
 		margin: auto;
 		max-width: 1040px;
-	}
-
-	#shopping-cart {
-		color: $color-text-navbar-desktop;
 	}
 }

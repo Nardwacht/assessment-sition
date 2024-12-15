@@ -4,8 +4,8 @@
 // Contains all constant values within the project, such as colors and fonts
 @import "imports/constants";
 
-// Contains all general rules for the details page.
-@import "imports/product-details/baseline-rules";
+// Contains all shared rules for the views
+@import "imports/shared-rules";
 
 // Contains rules specific for the Product details page
-@import "imports/product-details/mobile-rules";
+@import "imports/mobile-rules";
