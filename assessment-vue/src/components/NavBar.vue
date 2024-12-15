@@ -1,5 +1,5 @@
 <template>
-  <nav class="roboto-medium">
+  <nav class="roboto-medium" id="navbar-products-list">
     <a href="" class="navItem selected">New collection</a>
     <a href="" class="navItem">Sweaters</a>
     <a href="" class="navItem">Dresses</a>

@@ -1,12 +1,9 @@
 <script setup>
+  import NavBar from "../components/NavBar.vue";
+  import ProductsList from "../components/ProductsList.vue";
 </script>
 
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+    <NavBar />
+    <ProductsList />
 </template>
-
-<style>
-  @import "../assets/style/products-list.css";
-</style>
