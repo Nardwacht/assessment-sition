@@ -2,6 +2,7 @@
 import JsonData from "../assets/data/products.json";
 import ItemSizes from "@/components/Product/ItemSizes.vue";
 import ProductFabric from "../components/Product/ItemFabric.vue";
+import ProductImage from "@/components/Shared/ProductImage.vue";
 import ProductLabels from "../components/Shared/ProductLabels.vue";
 import ProductPrice from "../components/Shared/ProductPrice.vue";
 
@@ -36,10 +37,7 @@ console.debug(product);
 					:price="product.price"
 					:discountedPrice="product.discountedPrice"
 				/>
-				<img
-					v-bind:src="productImageBaseUrl + product.image"
-					alt="images"
-				/>
+				<ProductImage :image="product.image" />
 			</div>
 			<div class="product-information">
 				<a href="#bella" class="brand-page-link roboto-regular">
