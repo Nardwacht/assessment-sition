@@ -5,10 +5,10 @@ defineProps(["categories", "price", "discountedPrice"]);
 
 <template>
 	<div class="labels">
-		<span v-if="categories.includes('new')" class="new roboto-light"
+		<span v-if="categories.includes('new')" class="new roboto-regular"
 			>new</span
 		>
-		<span v-if="discountedPrice" class="discount roboto-light">{{
+		<span v-if="discountedPrice" class="discount roboto-regular">{{
 			HelperMethods.getDiscountPercentage(price, discountedPrice)
 		}}</span>
 	</div>

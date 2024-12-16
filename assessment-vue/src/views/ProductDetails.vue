@@ -9,7 +9,6 @@ import ProductPrice from "../components/Shared/ProductPrice.vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
-const productImageBaseUrl = "https://assessement.sition.cloud/media/images/";
 console.log(route.params.productName);
 const product = JsonData.products.find((obj) => {
 	return obj.title === route.params.productName;

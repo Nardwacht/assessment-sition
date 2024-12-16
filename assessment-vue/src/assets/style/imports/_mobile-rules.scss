@@ -45,7 +45,7 @@
 }
 
 // Desktop viewport
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1400px) {
 	body {
 		background-image: url("../img/background-image.jpeg");
 		background-size: cover;
@@ -71,9 +71,6 @@
 		}
 	}
 
-	.discount {
-		//font-size: 16px;
-	}
 	.image,
 	.product-information {
 		grid-column: span 6;
@@ -81,6 +78,13 @@
 
 	.product-card {
 		grid-column: span 4;
+	}
+
+	.info {
+		font-size: 16px;
+		.brand-page-link {
+			font-weight: 300;
+		}
 	}
 
 	#app {
@@ -98,7 +102,6 @@
 		a.selected {
 			color: $color-text-navbar-desktop;
 			border-bottom: 3px solid $color-text-navbar-desktop;
-			font-weight: 700;
 		}
 	}
 
@@ -137,7 +140,6 @@
 		.cart-text {
 			font-size: 12px;
 			color: $color-text-black;
-			line-height: 64px;
 			left: 17px;
 			top: 15px;
 			display: block;

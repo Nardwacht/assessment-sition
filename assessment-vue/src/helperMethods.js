@@ -8,23 +8,6 @@ const HelperMethods = {
     formatTitleAsRoute: function (title)
     {
         return title.replace( / /g, "+" );
-    },
-    validateImageUrl: function ( url, imageNotFoundUrl )
-    {
-        // const img = new Image();
-        // img.src = url;
-        // // If the image loads, return the original URL
-        // img.onload = () => {
-        //     return url;
-        // };
-        // // If the image returns a 404, return the default value
-        // img.onerror = () => {
-        //     return imageNotFoundUrl;
-        // };
-
-        const image = new Image();
-        image.src = url;
-        return image.width == 0 ? imageNotFoundUrl : url;        
     }
 };
 

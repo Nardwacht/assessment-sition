@@ -5,8 +5,8 @@ defineProps(["price", "discountedPrice"]);
 
 <template>
 	<div v-if="discountedPrice" class="price-information">
-		<span class="oldPrice">{{ HelperMethods.formatPrice(price) }}</span>
-		<span class="discountPrice">{{
+		<span class="oldPrice roboto-light">{{ HelperMethods.formatPrice(price) }}</span>
+		<span class="discountPrice roboto-regular">{{
 			HelperMethods.formatPrice(discountedPrice)
 		}}</span>
 	</div>

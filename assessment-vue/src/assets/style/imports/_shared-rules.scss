@@ -45,6 +45,9 @@ nav {
 			border-bottom: 3px $color-text-white solid;
 		}
 	}
+	.selected {
+		font-weight: 700;
+	}
 }
 
 a {
@@ -87,12 +90,13 @@ button {
 }
 
 .info {
+	margin-top: 10px;
 	font-size: 14px;
 }
 
 .oldPrice {
 	text-decoration: line-through;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
 .discountPrice {
