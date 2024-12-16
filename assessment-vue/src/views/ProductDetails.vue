@@ -1,5 +1,6 @@
 <script setup>
 import JsonData from "../assets/data/products.json";
+import HelperMethods from "@/helperMethods";
 import ItemSizes from "@/components/Product/ItemSizes.vue";
 import ProductFabric from "../components/Product/ItemFabric.vue";
 import ProductImage from "@/components/Shared/ProductImage.vue";

@@ -124,7 +124,7 @@ button {
 	aspect-ratio: 1/1;
 	overflow: hidden;
 	img {
-		transition: transform .2s;
+		transition: transform 0.2s;
 		display: block;
 		top: 0;
 		//margin: 10px auto;
@@ -158,6 +158,33 @@ button {
 .product-information {
 	h1 {
 		margin-bottom: 20px;
+	}
+}
+
+#filter-menu {
+	margin: 5px 16px;
+
+	.btnToggleFilter {
+		width: 100%;
+	}
+}
+
+#product-filters {
+	display: none;
+	grid-template-columns: repeat(9, 1fr);
+	column-gap: 5px;
+}
+
+.btnFilter {
+	color: $color-text-black;
+	border: 3px solid $background-color-label-new;
+	border-radius: 10px;
+	&:hover {
+		background-color: lighten($background-color-label-new, 5%);
+		cursor: pointer;
+	}
+	&.active {
+		background-color: $background-color-label-new;
 	}
 }
 

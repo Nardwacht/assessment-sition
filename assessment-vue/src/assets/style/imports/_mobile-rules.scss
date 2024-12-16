@@ -24,6 +24,18 @@
 		font-size: 14px;
 	}
 
+	.btnToggleFilter {
+		display: none;
+	}
+
+	#product-filters {
+		display: grid;
+	}
+
+	.btnFilter {
+		grid-column: span 1;
+	}
+
 	.info {
 		font-size: 16px;
 	}
@@ -75,6 +87,10 @@
 	.product-information {
 		grid-column: span 6;
 	}
+	
+	.btnToggleFilter {
+		display: none;
+	}
 
 	.product-card {
 		grid-column: span 4;
@@ -114,6 +130,10 @@
 		.image {
 			grid-column: span 6;
 		}
+	}
+	
+	#product-filters {
+		display: grid;
 	}
 
 	#products-list {

@@ -312,6 +312,32 @@ button {
   margin-bottom: 20px;
 }
 
+#filter-menu {
+  margin: 5px 16px;
+}
+#filter-menu .btnToggleFilter {
+  width: 100%;
+}
+
+#product-filters {
+  display: none;
+  grid-template-columns: repeat(9, 1fr);
+  column-gap: 5px;
+}
+
+.btnFilter {
+  color: #000000;
+  border: 3px solid #ffc8cb;
+  border-radius: 10px;
+}
+.btnFilter:hover {
+  background-color: #ffe2e3;
+  cursor: pointer;
+}
+.btnFilter.active {
+  background-color: #ffc8cb;
+}
+
 #navbar-products-list {
   padding-bottom: 16px;
   clip-path: inset(0 0 16px 0);
@@ -453,6 +479,15 @@ button {
     margin: 0 18px;
     font-size: 14px;
   }
+  .btnToggleFilter {
+    display: none;
+  }
+  #product-filters {
+    display: grid;
+  }
+  .btnFilter {
+    grid-column: span 1;
+  }
   .info {
     font-size: 16px;
   }
@@ -495,6 +530,9 @@ button {
   .product-information {
     grid-column: span 6;
   }
+  .btnToggleFilter {
+    display: none;
+  }
   .product-card {
     grid-column: span 4;
   }
@@ -526,6 +564,9 @@ button {
   #product-details .product-information,
   #product-details .image {
     grid-column: span 6;
+  }
+  #product-filters {
+    display: grid;
   }
   #products-list {
     margin: 0;
