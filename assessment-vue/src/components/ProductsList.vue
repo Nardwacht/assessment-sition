@@ -1,16 +1,20 @@
 <script setup>
-import HelperMethods from "../helperMethods";
 import JsonData from "../assets/data/products.json";
+import ProductLabels from "./Shared/ProductLabels.vue";
+import ProductPrice from "./Shared/ProductPrice.vue";
 const productsCatalog = JsonData.products; // since the json has one singular products object containing an array of products, I assign it here.
 
 // This baseUrl would ideally be set via a configuration property or database field.
 const productImageBaseUrl = "https://assessement.sition.cloud/media/images/";
-
 </script>
 
 <template>
 	<ol id="products-list" :key="products">
-		<li v-for="product in productsCatalog" class="product-card" :key="product">
+		<li
+			v-for="product in productsCatalog"
+			class="product-card"
+			:key="product"
+		>
 			<router-link
 				:to="{
 					name: 'Product',
@@ -18,23 +22,11 @@ const productImageBaseUrl = "https://assessement.sition.cloud/media/images/";
 				}"
 			>
 				<a href="" class="visual">
-					<div class="labels">
-						<span
-							v-if="product.categories.includes('new')"
-							class="new roboto-light"
-							>new</span
-						>
-						<span
-							v-if="product.discountedPrice"
-							class="discount roboto-regular"
-							>{{
-								HelperMethods.getDiscountPercentage(
-									product.price,
-									product.discountedPrice
-								)
-							}}</span
-						>
-					</div>
+					<ProductLabels
+						:categories="product.categories"
+						:price="product.price"
+						:discounted-price="product.discountedPrice"
+					/>
 					<div class="image">
 						<img
 							v-bind:src="productImageBaseUrl + product.image"
@@ -51,22 +43,10 @@ const productImageBaseUrl = "https://assessement.sition.cloud/media/images/";
 					<p class="productTitle roboto-medium">
 						{{ product.title }}
 					</p>
-					<div
-						v-if="product.hasOwnProperty('discountedPrice')"
-						class="price-information"
-					>
-						<span class="oldPrice">{{
-							HelperMethods.formatPrice(product.price)
-						}}</span>
-						<span class="discountPrice">{{
-							HelperMethods.formatPrice(product.discountedPrice)
-						}}</span>
-					</div>
-					<div v-else class="price-information">
-						<span class="price">{{
-							HelperMethods.formatPrice(product.price)
-						}}</span>
-					</div>
+					<ProductPrice
+						:price="product.price"
+						:discounted-price="product.discountedPrice"
+					/>
 				</div>
 			</router-link>
 		</li>

@@ -1,6 +1,11 @@
 <script setup>
 import HelperMethods from "../helperMethods";
 import JsonData from "../assets/data/products.json";
+import ItemSizes from "@/components/Product/ItemSizes.vue";
+import ProductFabric from "../components/Product/ItemFabric.vue";
+import ProductLabels from "../components/Shared/ProductLabels.vue";
+import ProductPrice from "../components/Shared/ProductPrice.vue";
+
 import { useRoute } from "vue-router";
 
 const route = useRoute();
@@ -27,13 +32,11 @@ console.debug(product);
 	<main>
 		<section id="product-details">
 			<div class="image">
-				<div class="labels">
-					<span
-						v-if="product.categories.includes('new')"
-						class="new roboto-light"
-						>new</span
-					>
-				</div>
+				<ProductLabels
+					:categories="product.categories"
+					:price="product.price"
+					:discountedPrice="product.discountedPrice"
+				/>
 				<img
 					v-bind:src="productImageBaseUrl + product.image"
 					alt="images"
@@ -46,27 +49,12 @@ console.debug(product);
 				<p class="product-title roboto-medium">
 					{{ product.title }}
 				</p>
-				<div
-					v-if="product.hasOwnProperty('discountedPrice')"
-					class="price-information"
-				>
-					<span class="oldPrice">{{
-						HelperMethods.formatPrice(product.price)
-					}}</span>
-					<span class="discountPrice">{{
-						HelperMethods.formatPrice(product.discountedPrice)
-					}}</span>
-				</div>
+				<ProductPrice
+					:price="product.price"
+					:discounted-price="product.discountedPrice"
+				/>
 				<div class="product-buttons">
-					<select id="size-selection" class="roboto-regular">
-						<option>Size: XXS</option>
-						<option>Size: XS</option>
-						<option>Size: S</option>
-						<option selected="selected">Size: M</option>
-						<option>Size: L</option>
-						<option>Size: XL</option>
-						<option>Size: XXL</option>
-					</select>
+					<ItemSizes />
 					<button id="btnAddToCart" class="roboto-medium">
 						Add to cart
 					</button>
@@ -85,32 +73,15 @@ console.debug(product);
 							v-for="color in product.properties.color"
 							:key="color"
 						>
-							<br />{{ color }}
+							<br />- {{ color }}
 						</span>
 					</div>
 					<div v-else>
 						<span> Color: </span>
-						<span> <br />{{ product.properties.color[0] }} </span>
+						<span> <br />- {{ product.properties.color[0] }} </span>
 					</div>
 				</div>
-				<div
-					class="product-fabric"
-					v-if="product.properties.hasOwnProperty('fabric')"
-				>
-					<div v-if="product.properties.fabric.length > 1">
-						<span> Made from: </span>
-						<span
-							v-for="fabric in product.properties.fabric"
-							:key="fabric"
-						>
-							<br />{{ fabric }}
-						</span>
-					</div>
-					<div v-else>
-						<span> Made from: </span>
-						<span> <br />{{ product.properties.fabric[0] }} </span>
-					</div>
-				</div>
+				<ProductFabric :fabrics="product.properties.fabric" />
 			</div>
 		</section>
 	</main>
