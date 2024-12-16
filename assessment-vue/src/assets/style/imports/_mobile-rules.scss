@@ -35,6 +35,13 @@
 	.product-card {
 		grid-column: span 6;
 	}
+
+	#product-details {
+		.product-information,
+		.image {
+			grid-column: span 6;
+		}
+	}
 }
 
 // Desktop viewport

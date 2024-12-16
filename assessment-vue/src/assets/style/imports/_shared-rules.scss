@@ -1,8 +1,8 @@
 * {
 	// A neat debug trick to see how elements behave, use during debug only!
 	// outline: 1px solid magenta;
+	scrollbar-width: none;
 }
-
 
 html,
 body {
@@ -11,10 +11,9 @@ body {
 	font-size: 14pt;
 }
 
-#app {
-	width: 100%;
-	min-height: 100vh;
-	background-color: $background-color-white;
+main {
+	display: block;
+	position: relative;
 }
 
 nav {
@@ -26,7 +25,6 @@ nav {
 	overflow-x: auto;
 	overflow-y: hidden;
 	white-space: nowrap;
-	scrollbar-width: none;
 	font-size: 14px;
 	height: 48px;
 	a {
@@ -38,168 +36,31 @@ nav {
 		line-height: 45px;
 		border-bottom: 3px solid transparent;
 		font-size: 14px;
-		transition: color .2s;
+		transition: color 0.2s;
 		&:hover {
 			color: $color-text-white;
 		}
 
-        &.selected{
-            color: $color-text-white;
-            border-bottom: 3px $color-text-white solid; 
-        }
+		&.selected {
+			color: $color-text-white;
+			border-bottom: 3px $color-text-white solid;
+		}
 	}
-}
-
-#btnAddToCart {
-    cursor: pointer;
-    transition: background-color .2s;
-    &:hover{
-        background-color: darken($background-color-navbar-mobile, 5%);
-    }
 }
 
 a {
 	.brand-page-link {
 		z-index: 10;
-		transition: text-decoration .2s;
+		transition: text-decoration 0.2s;
 		&:hover {
 			text-decoration: underline;
 		}
 	}
-    
-    color: $color-text-black;
-    &:visited,
-    &:focus {
-        color: $color-text-black;
-    }
-}
 
-#shopping-cart {
-    width: 48px;
-    margin: 0;
-    right: 0;
-
-    span {
-        vertical-align: middle;
-    }
-
-    .cart-text {
-        display: none;
-    }
-}
-
-.info {
-	font-size: 14px;
-}
-
-.oldPrice {
-	text-decoration: line-through;
-	margin-right: 10px;
-}
-
-.discountPrice {
-	color: $color-text-discount;
-}
-
-
-.product-colors,
-.product-fabric {
-    margin-bottom: 10px;
-}
-
-.price-information {
-	margin-top: 12px;
-}
-
-.labels {
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	width: fit-content;
-}
-
-.new {
-	background-color: $background-color-label-new;
-}
-.discount {
-	background-color: $background-color-label-discount;
-}
-.new,
-.discount {
-	display: block;
-	text-transform: uppercase;
-	line-height: 20px;
-	font-size: 12px;
-	border-radius: 4px;
-	padding: 0 4px;
-	margin-bottom: 5px;
-	width: min-content;
-}
-
-#product-details {
-	min-height: 100%;
-	background-color: $background-color-white;
-	position: relative;
-	max-width: 100%;
-	align-content: center;
-	margin:0 16px;
-	display: grid;
-	font-size: 14px;
-	column-gap: 15px;
-	row-gap: 20px;
-
-	grid-template-columns: repeat(12, minmax(0, 1fr));
-	display: grid;
-	.new,
-	.discount {
-		text-transform: uppercase;
-		line-height: 20px;
-		font-size: 14px;
-		border-radius: 4px;
-		padding: 0 4px;
-		margin-bottom: 5px;
-		width: min-content;
-	}
-
-	a {
-		display: inline-block;
-		vertical-align: middle;
-		text-align: center;
-		line-height: 48px;
-		text-transform: uppercase;
-		border-bottom: 3px solid transparent;
+	color: $color-text-black;
+	&:visited,
+	&:focus {
 		color: $color-text-black;
-		line-height: normal;
-
-        &:hover{
-            text-decoration: none;
-        }
-	}
-	img {
-		width: 100%;
-        text-align: center;
-	}
-
-	.image,
-	.product-information {
-		grid-column: span 12;
-	}
-
-	#background-overlay {
-		background-color: #ffffffcc;
-	}
-
-	.product-buttons {
-		margin: 20px 0;
-	}
-	.product-description {
-		margin: 10px 0;
-	}
-}
-
-.product-information {
-	h1 {
-		margin-bottom: 20px;
 	}
 }
 
@@ -226,14 +87,138 @@ button {
 	margin: 5px 0;
 }
 
+.info {
+	font-size: 14px;
+}
+
+.oldPrice {
+	text-decoration: line-through;
+	margin-right: 10px;
+}
+
+.discountPrice {
+	color: $color-text-discount;
+}
+
+.product-colors,
+.product-fabric {
+	margin-bottom: 10px;
+}
+
+.price-information {
+	margin-top: 8px;
+}
+
+.labels {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: fit-content;
+}
+
+.image {
+	aspect-ratio: 1/1;
+	img {
+		display: block;
+		top: 0;
+		//margin: 10px auto;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.new {
+	background-color: $background-color-label-new;
+}
+.discount {
+	background-color: $background-color-label-discount;
+}
+.new,
+.discount {
+	display: block;
+	text-transform: uppercase;
+	line-height: 20px;
+	font-size: 12px;
+	border-radius: 4px;
+	padding: 0 4px;
+	margin-bottom: 5px;
+	width: min-content;
+}
+
+#navbar-product-details {
+	#shopping-cart {
+		position: absolute;
+	}
+}
+
+#product-details {
+	min-height: 100%;
+	background-color: $background-color-white;
+	position: relative;
+	max-width: 100%;
+	align-content: center;
+	margin: 16px;
+	display: grid;
+	font-size: 14px;
+	column-gap: 15px;
+	row-gap: 20px;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	display: grid;
+	.new,
+	.discount {
+		text-transform: uppercase;
+		line-height: 20px;
+		font-size: 12px;
+		border-radius: 4px;
+		padding: 0 4px;
+		margin-bottom: 5px;
+		width: min-content;
+	}
+
+	a {
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+		line-height: 48px;
+		border-bottom: 3px solid transparent;
+		color: $color-text-black;
+		line-height: normal;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	img {
+		width: 100%;
+		text-align: center;
+	}
+
+	.image,
+	.product-information {
+		grid-column: span 12;
+	}
+
+	#background-overlay {
+		background-color: #ffffffcc;
+	}
+
+	.product-buttons {
+		margin: 20px 0;
+	}
+	.product-description {
+		margin: 10px 0;
+	}
+}
+
+.product-information {
+	h1 {
+		margin-bottom: 20px;
+	}
+}
+
 #btnAddToCart {
 	color: $color-text-white;
 	background-color: $background-color-navbar-mobile;
-}
-
-main {
-	display: block;
-	position: relative;
 }
 
 #products-list {
@@ -251,21 +236,37 @@ main {
 		width: 100%;
 		position: relative;
 		aspect-ratio: 1;
-
-		.image {
-			aspect-ratio: 1/1;
-			img {
-				display: block;
-				top: 0;
-				margin: 10px auto;
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
-		}
 	}
+}
+
+#app {
+	width: 100%;
+	min-height: 100vh;
+	background-color: $background-color-white;
 }
 
 #background-overlay {
 	background-color: #ffffffcc;
+}
+
+#btnAddToCart {
+	cursor: pointer;
+	transition: background-color 0.2s;
+	&:hover {
+		background-color: darken($background-color-navbar-mobile, 5%);
+	}
+}
+
+#shopping-cart {
+	width: 48px;
+	margin: 0;
+	right: 0;
+
+	span {
+		vertical-align: middle;
+	}
+
+	.cart-text {
+		display: none;
+	}
 }
