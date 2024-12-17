@@ -82,3 +82,12 @@ To be able to show other views, I needed to set up vue-router.
 This would ensure that every product is able to have its own details page.
 
 In the Product Details page I also included a back button which redirects back to the products list page.
+
+
+
+### 9. Adding a filter control  
+
+To filter the products I needed to make a variation of the `Array.prototype.find(product.title)` call. 
+By using `Array.prototype.filter(propertyName)` I was able to obtain all objects that match the property instead of just the first match.
+
+Creating an array containing all the unique categories was the quickest way 

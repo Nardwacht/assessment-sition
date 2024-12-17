@@ -208,7 +208,6 @@ main {
 a.brand-page-link {
   z-index: 10;
 }
-
 a.brand-page-link:hover {
   text-decoration: underline;
 }
@@ -216,12 +215,11 @@ a.brand-page-link:hover {
 .visual {
   width: 100%;
   position: relative;
-  aspect-ratio: 1;
 }
-.visual .image {
+.visual .image-container {
   aspect-ratio: 1/1;
 }
-.visual .image img {
+.visual .image-container img {
   display: block;
   top: 0;
   margin: auto;

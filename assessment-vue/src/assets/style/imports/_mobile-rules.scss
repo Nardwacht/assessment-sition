@@ -10,7 +10,7 @@
 	}
 }
 
-// extra rule to make shopping cart stick to rightmost section of screen
+// Extra rule to make shopping cart stick to rightmost section of screen
 @media screen and (min-width: 860px) {
 	#shopping-cart {
 		position: absolute;
@@ -28,12 +28,9 @@
 		display: none;
 	}
 
-	#product-filters {
-		display: grid;
-	}
-
 	.btnFilter {
 		grid-column: span 1;
+		font-size: 14px;
 	}
 
 	.info {
@@ -48,9 +45,13 @@
 		grid-column: span 6;
 	}
 
+	#product-filters {
+		display: grid;
+	}
+
 	#product-details {
 		.product-information,
-		.image {
+		.image-container {
 			grid-column: span 6;
 		}
 	}
@@ -87,9 +88,13 @@
 	.product-information {
 		grid-column: span 6;
 	}
-	
+
 	.btnToggleFilter {
 		display: none;
+	}
+
+	.btnFilter {
+		font-size: 14px;
 	}
 
 	.product-card {
@@ -127,11 +132,11 @@
 
 	#product-details {
 		.product-information,
-		.image {
+		.image-container {
 			grid-column: span 6;
 		}
 	}
-	
+
 	#product-filters {
 		display: grid;
 	}

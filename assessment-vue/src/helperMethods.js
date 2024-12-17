@@ -8,7 +8,18 @@ const HelperMethods = {
     formatTitleAsRoute: function (title)
     {
         return title.replace( / /g, "+" );
+    },
+    getProductCategories: function (products)
+    {   
+        const categories = ["all"];
+        products.forEach( ( element ) => {
+            element.categories.forEach((category) => {
+                if ( !categories.includes(category)) categories.push(category);
+            });
+        } );
+        return categories;
     }
-};
+}
+
 
 export default HelperMethods;
