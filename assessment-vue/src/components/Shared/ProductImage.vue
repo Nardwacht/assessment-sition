@@ -1,17 +1,19 @@
 <script setup>
+import NoImageAvailable from "/src/assets/img/no-image-available.png";
+
 function getImageUrl(image) {
 	return `https://assessement.sition.cloud/media/images/${image}`;
 }
 
 function setAltImage(event) {
-	event.target.src = "/src/assets/img/no-image-available.png";
+	event.target.src = NoImageAvailable;
 }
 
 defineProps(["image"]);
 </script>
 
 <template>
-    <!-- The @error eventhandler returns default broken image when the product image returns 404 -->
+	<!-- The @error eventhandler returns default broken image when the product image returns 404 -->
 	<img
 		:src="getImageUrl(image)"
 		@error="setAltImage"
