@@ -21,5 +21,4 @@ const HelperMethods = {
     }
 }
 
-
 export default HelperMethods;

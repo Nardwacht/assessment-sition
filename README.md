@@ -4,7 +4,7 @@
 
 ### 0.Notes
 
-Some things I encountered during development:
+Some things I encountered during development|
 - The Figma document states that Roboto is used for the text of prices, but when applying these fonts they do not resemble the design at all. Since this is a minor detail, I will leave this as is.
 - Not all of the image URLs are correct, for example the URL for "Summer Dress Salmon" has an image URL that returns a white shirt instead. Since I do not know what the actual URL is, I will keep it as is and show an error message.
 
@@ -22,11 +22,11 @@ For the classnames I will use the Figma document as closely as possible, because
 
 ### 2. Creating the NavBar
 
-Making a sticky navigation was fairly straightforward, just apply position:sticky to it and make sure it is always visible with `z-index`.
+Making a sticky navigation was fairly straightforward, just apply position|sticky to it and make sure it is always visible with `z-index`.
 
 Figuring out how to make the navbar scrollable was something different though. 
-To remove the scrollbars, it is common practice to use `::webkit-scrollbar`, but that was not allowed here.
-Eventually I made it scrollable by setting `overflow: auto` and by setting `scrollbar-width: none` so that the bar wasn't visible anymore. 
+To remove the scrollbars, it is common practice to use `||webkit-scrollbar`, but that was not allowed here.
+Eventually I made it scrollable by setting `overflow| auto` and by setting `scrollbar-width| none` so that the bar wasn't visible anymore. 
 
 The navbar also has a small arrow/triangle below it on the desktop viewport which I just couldn't get to work, so for times' sake I left it out.
 
@@ -43,14 +43,16 @@ Keeping the mobile-first principle in mind, I started with the mobile viewport a
 All tablet or desktop specific rules will overwrite this baseline by using media queries later on.
 The navbar has a different color scheme on desktop for example, and the font sizes change on the different viewports. The amount of items in the grid also changes of course, so I had to change the `grid-column` for that.
 
+
 ### 4. Creating the product detail page
 
 Because there was no design provided for this page and I was free to create my own design as I see fit, so that is exactly what I did.
 
-I created a design for mobile, tablet and desktop in Figma https://www.figma.com/design/4jCUg24aQrdSsszT1TSaDd/assessment-sition-product-details-page?node-id=0-1&t=1FeQORQMEDqBI2Eu-1 so I could have some more structure in how I can approach writing the code.
+I created a design for mobile, tablet and desktop [in Figma](https//www.figma.com/design/4jCUg24aQrdSsszT1TSaDd/assessment-sition-product-details-page?node-id=0-1&t=1FeQORQMEDqBI2Eu-1) so I could have some more structure in how I can approach writing the code.
 During the design, I used the product listing page Figma as a baseline, so headers and font sizes are the same size and the 2 pages are part of the same cohesive "website".
 
 I also wanted to implement some new things, like a color and size selector, as well as a "add to cart" button.
+
 
 ### 5. Creating the VueJS project
 
@@ -64,17 +66,20 @@ After this, I proceeded by checking how I could divide my static HTML into compo
 Navbar and Product List looked like the first logical candidates, so I copied and pasted my HTML into their respective Vue components. 
 Just keeping it simple for now.
 
+
 ### 6. Making the pages render dynamically
 
 As a JSON file was provided, I wanted to make sure I used this to loop over all the products and get all their properties into my components. This way I can neatly render the entire page without writing a lot of HTML and use all VueJS has to offer.
 
 Since the JSON has one `products` object holding an array of products, I made my life easier by directly accessing the products object. Then, I looped through the products array and put all properties in place.
 
+
 ### 7. Implementing the Product Details page
 
 Since the products in the JSON does not have an id or other unique identifier I decided to use the product title property to pass as a parameter. This way I will able to get each product by searching for their name using JavaScripts built-in `Array.prototype.find(product.title)` function.
 
 Luckily I already created the layout for this page, so after obtaining the product I was able to replace all static text with the products' properties.
+
 
 ### 8. Setting up the router
 
@@ -84,10 +89,48 @@ This would ensure that every product is able to have its own details page.
 In the Product Details page I also included a back button which redirects back to the products list page.
 
 
-
 ### 9. Adding a filter control  
 
 To filter the products I needed to make a variation of the `Array.prototype.find(product.title)` call. 
 By using `Array.prototype.filter(propertyName)` I was able to obtain all objects that match the property instead of just the first match.
+To obtain the product categories I created a helper method to loop through the products and their categories and add them to an array if they didn't yet exist.
 
-Creating an array containing all the unique categories was the quickest way 
+After this, I created a computed property that returns the products that match the selected category.
+This array of products is then passed to the v-for loop and the component is rendered again.
+
+
+### 10. Time spent
+
+Below is a table of how I spent my time. 
+I wanted to really take the time to implement as much as possible from the Figma design and had to learn VueJS from scratch as well in the meantime.
+Because no design was provided for the product details page, I decided to create my own since it would not be too much extra work for me.
+
+
+#### Product listing page	
+|What|Time spent|
+|:---|---:|
+|Creating page structure with static data|1u 0m|
+|Creating page Styling|	4u 0m|
+|Creating Vue components|1u 0m|
+|Fetching and binding product data|	1u 0m|
+|Adding data formatting and edge cases to data| 1u 0m|
+|Including sorting and filtering functionality|	1u 0m|
+|Adding navigation logic (vue-router)|	1u 0m|
+
+
+#### Product detail page	
+|What|Time spent|
+|:---|---:|
+|Designing page layout in Figma|	0u 30m|
+|Creating page structure with static data|	1u 0m|
+|Creating page styling|	1u 0m|
+|Creating Vue components|1u 0m
+|Integrating product data|1u 0m|
+|Adding data formatting and edge cases to data|	1u 0m|
+
+
+#### Other
+|What|Time spent|
+|:---|---:|
+|Analysing the Figma design|1u 0m|
+|Documentation|	3u 0m|
